@@ -1,5 +1,10 @@
 import user from '../data/user';
+import dataStats from '../data/dataStats';
+import friends from 'data/friends';
 import { Profile } from './profile/Profile';
+import { Statistics } from './statistics/Statistics';
+import { FriendsList } from './friendsList/FriendsList';
+
 export const App = () => {
   return (
     <div
@@ -19,7 +24,9 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      React homework template
+      <Statistics title="Upload stats" stats={dataStats} />
+      <Statistics stats={dataStats} />
+      <FriendsList friends={friends} />
     </div>
   );
 };
