@@ -1,11 +1,15 @@
+import * as S from './FriendListItem.styled';
+
 export const FriendsListItem = ({ friends }) => {
   return friends.map(({ avatar, name, isOnline, id }) => {
     return (
-      <li className="item" key={id}>
-        <span className="status">{isOnline}</span>
+      <S.FriendListItem className="item" key={id}>
+        <S.Status className="status" status={isOnline}>
+          {isOnline}
+        </S.Status>
         <img className="avatar" src={avatar} alt={name} width="48" />
         <p className="name">{name}</p>
-      </li>
+      </S.FriendListItem>
     );
   });
 };
